@@ -23,6 +23,10 @@ public class BaseDatos implements IBaseDatos {
     private final Map<String, Integer> auditoria = new HashMap<>();
 
     @Override
+    public void conectar() {
+    }
+
+    @Override
     public List<Mascota> getMascotas() {
         return mascotas;
     }
@@ -51,6 +55,7 @@ public class BaseDatos implements IBaseDatos {
         auditoria.put(nombre, auditoria.getOrDefault(nombre, 0) + 1);
     }
 
+    @Override
     public Map<String, Integer> getAuditoria() {
         return auditoria;
     }

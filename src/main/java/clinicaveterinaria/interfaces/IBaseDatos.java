@@ -7,8 +7,11 @@ import clinicaveterinaria.model.Tratamiento;
 import clinicaveterinaria.model.Veterinario;
 
 import java.util.List;
+import java.util.Map;
 
 public interface IBaseDatos {
+    void conectar();
+
     List<Mascota> getMascotas();
 
     List<Veterinario> getVeterinarios();
@@ -18,4 +21,6 @@ public interface IBaseDatos {
     List<Tratamiento> getTratamientos();
 
     List<Factura> getFacturas();
+
+    Map<String, Integer> getAuditoria();
 }
