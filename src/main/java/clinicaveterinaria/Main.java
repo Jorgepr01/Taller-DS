@@ -1,5 +1,6 @@
 package clinicaveterinaria;
 
+import clinicaveterinaria.interfaces.*;
 import clinicaveterinaria.model.*;
 import clinicaveterinaria.repository.*;
 import clinicaveterinaria.service.*;
@@ -60,9 +61,8 @@ public class Main {
         System.out.println("Reporte: " + veterinario.getNombre() + " atendio a " +
                 citaDesdeModelo.getMascota().getNombre() + " con diagnostico " + citaDesdeModelo.getDiagnostico());
 
-        Animal pez = new Pez(3, "Nemo");
+        Nadador pez = new Pez(3, "Nemo");
         pez.nadar();
-        System.out.println("El pez heredó caminar() y volar(), aunque no debe usarlos.");
         System.out.println("Tratamiento OCP violado pero funcional: " + tratamiento.obtenerIndicaciones());
     }
 }

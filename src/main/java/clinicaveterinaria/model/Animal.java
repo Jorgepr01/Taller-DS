@@ -17,20 +17,10 @@ public class Animal implements IAnimal {
     }
 
     @Override
-    public void volar() {
-        System.out.println(nombre + " esta volando.");
+    public void moverse(){
+        System.out.println("Este animal puede moverse");
     }
-
-    @Override
-    public void nadar() {
-        System.out.println(nombre + " esta nadando.");
-    }
-
-    @Override
-    public void caminar() {
-        System.out.println(nombre + " esta caminando.");
-    }
-
+         
     public int getId() {
         return id;
     }
