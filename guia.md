@@ -99,8 +99,16 @@ Checklist de validación:
 Preguntas de discusión:
 
 - ¿Cuántas razones para cambiar tenía `Veterinario` antes del refactoring?
+
+Habia 4 razones,tanto reserva, diagnostico, factura y reporte eran metodos que no dependian solamente de la entidad veterinario. Por ejemplo la reserva dependia de cuantos cupos disponibles habian restantes para ciertos dias, la cantidad de pacientes, etc. Diagnostico dependia de otros factores como la atencion del cliente, su edad, historial medico, no solo del veterinario, reporte de cuantas mascotas hay, su raza, tipo, etc. Y factura ya sea del tipo de servicio que se ofrece, las condiciones comerciales, la naturaleza y fecha donde se realicen, etc.
+
 - ¿Qué ganamos al separar modelo y servicios?
+
+Ganamos integridad de los datos, y tambien evitamos redundancia al tener que modificar el codigo a futuro por actualizaciones de politicas de la empresa, o futuro cambio de servicios. Asi se mantiene una estructura solida y que no depende de un dato redundante
+
 - ¿Qué clase debería cambiar si mañana cambia el formato del reporte?
+
+Habria que cambiar ReporteService debido a que en esta clase gracias al principio aplicado de Single Responsability Principle es la unica que maneja y controla los datos y sintaxis de los reportes
 
 ## Integrante 2 - OCP
 
