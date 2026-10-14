@@ -16,24 +16,6 @@ public class Veterinario {
         this.disponible = disponible;
     }
 
-    public Cita reservarCita(int citaId, Mascota mascota, LocalDate fecha) {
-        disponible = false;
-        return new Cita(citaId, mascota, this, fecha, "Pendiente", EstadoCita.PROGRAMADA);
-    }
-
-    public void diagnosticar(Cita cita, String diagnostico) {
-        cita.setDiagnostico(diagnostico);
-        cita.setEstado(EstadoCita.ATENDIDA);
-    }
-
-    public Factura generarFactura(int facturaId, Cita cita, double monto, LocalDate fecha) {
-        return new Factura(facturaId, cita, monto, fecha, false);
-    }
-
-    public String crearReporte(Cita cita) {
-        return "Reporte: " + nombre + " atendio a " +
-                cita.getMascota().getNombre() + " con diagnostico " + cita.getDiagnostico();
-    }
 
     public int getId() {
         return id;
