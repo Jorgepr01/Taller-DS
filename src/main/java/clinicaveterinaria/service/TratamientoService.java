@@ -1,6 +1,6 @@
 package clinicaveterinaria.service;
 
-import clinicaveterinaria.model.TipoTratamiento;
+import clinicaveterinaria.interfaces.ITratamiento;
 import clinicaveterinaria.model.Tratamiento;
 import clinicaveterinaria.repository.BaseDatos;
 
@@ -38,17 +38,8 @@ public class TratamientoService {
         baseDatos.registrarOperacion("eliminarTratamiento");
     }
 
-    public String prepararSala(Tratamiento tratamiento) {
-        if (tratamiento.getTipo() == TipoTratamiento.VACUNA) {
-            return "Preparar refrigeracion y jeringas.";
-        } else if (tratamiento.getTipo() == TipoTratamiento.CIRUGIA) {
-            return "Preparar quirofano y anestesia.";
-        } else if (tratamiento.getTipo() == TipoTratamiento.MEDICAMENTO) {
-            return "Preparar receta y dosis.";
-        } else if (tratamiento.getTipo() == TipoTratamiento.FISIOTERAPIA) {
-            return "Preparar camilla y bandas elasticas.";
-        }
-        return "Sin preparacion.";
+    public String prepararSala(ITratamiento tratamiento) {
+        return tratamiento.CondicionesSala();
     }
 
     public List<Tratamiento> listarTratamientos() {
